@@ -13,7 +13,7 @@ const Info = (props)=>{
     <h1>INFO</h1>
     <p>The info is : {props.info}</p>
 
-    </div>
+    </div> 
     )
 };
 
@@ -44,6 +44,6 @@ const requireAuthentication=(WrappedComponent)=>{
 }
 
 
-//const AdminInfo=withAdminWarning(Info)
-const AuthInfo=requireAuthentication(Info)
-ReactDOM.render(<AuthInfo isAuthenticated={true} info ="This is info "/>, document.getElementById('app'));
+const AdminInfo=withAdminWarning(Info)
+//const AuthInfo=requireAuthentication(Info)
+ReactDOM.render(<AdminInfo isAuthenticated={true} info ="This is info "/>, document.getElementById('app'));
