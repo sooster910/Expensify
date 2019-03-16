@@ -1,5 +1,6 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
+import {removeExpense} from '../actions/expenses';
 
 
 //export stateless component
@@ -12,9 +13,15 @@ const ExpenseListItem=(props)=>{
         <div>
             <p>id : {props.expense.id}</p>
            <p>description : {props.expense.description}</p>
-           {/* <p> amount : {props.amount}</p>
-           <p> createdAt : {props.createdAt}</p> */}
-        
+           <p> amount : {props.amount}</p>
+           <p> createdAt : {props.createdAt}</p>
+            
+            <button onClick={()=>{
+                props.dispatch(removeExpense({id:props.expense.id}));
+               
+            }}> Remove </button>
+
+
         </div>
     )
 
@@ -22,4 +29,4 @@ const ExpenseListItem=(props)=>{
 
 //render description, amount, createdAt
 
-export default ExpenseListItem;
+export default connect()(ExpenseListItem);
