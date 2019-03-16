@@ -1,7 +1,5 @@
 //Get visible expense
-const getVisibleExpenses =(addedExpense, {text, sortBy, startDate,endDate})=>{
- 
-
+const getVisibleExpense=(addedExpense, {text, sortBy, startDate,endDate})=>{
     return addedExpense.filter((filterExpense)=>{
         const startDateMatch = typeof startDate!== 'number' || filterExpense.createdAt>=startDate;
         const endDateMatch =typeof endDate!=='number' || filterExpense.createdAt<=endDate;
@@ -18,5 +16,4 @@ const getVisibleExpenses =(addedExpense, {text, sortBy, startDate,endDate})=>{
         } 
         });
 }
-
-export default getVisibleExpenses;
+export default getVisibleExpense;
